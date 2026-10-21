@@ -25,6 +25,7 @@ dev = [
     "pytest>=8",
     "mypy>=1.13",
     "ruff>=0.8",
+    "pre-commit>=4.7.0",
 ]
 
 [tool.hatch.build.targets.wheel]

@@ -49,6 +49,17 @@ uv sync
 That writes `.venv/` and `uv.lock`. Everything below runs through `uv run`, which
 uses `.venv` without activating it.
 
+Install the commit message hook once per clone:
+
+```sh
+uv run pre-commit install --hook-type commit-msg
+```
+
+The hook rejects messages that do not follow Conventional Commits, such as
+`update stuff`. Use a type and an optional scope: `feat:`, `fix:`, `chore:`,
+`docs:`, `refactor:`, `test:`. Bypassing it with `git commit --no-verify` skips
+the check, so CI is the only hard enforcement.
+
 Run the test suite:
 
 ```sh
